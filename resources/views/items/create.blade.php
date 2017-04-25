@@ -315,7 +315,7 @@
                             </div>
                         </div>
 
-                        {{ Form::submit('Submit Item', array('class' => 'btn btn-primary pull-right')) }}
+                        {{ Form::submit('Submit Item', array('class' => 'btn btn-success pull-right')) }}
 
                         {{ Form::close() }}
 

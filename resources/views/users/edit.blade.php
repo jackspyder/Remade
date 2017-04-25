@@ -66,7 +66,7 @@
                             {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
                         </div>
 
-                        {{ Form::submit('Edit Member', array('class' => 'btn btn-primary pull-right')) }}
+                        {{ Form::submit('Edit Member', array('class' => 'btn btn-success pull-right')) }}
 
                         {{ Form::close() }}
 

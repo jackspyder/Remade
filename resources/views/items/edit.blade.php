@@ -317,7 +317,7 @@
                             </div>
                         </div>
 
-                        {{ Form::submit('Edit Item', array('class' => 'btn btn-primary pull-right')) }}
+                        {{ Form::submit('Edit Item', array('class' => 'btn btn-success pull-right')) }}
 
                         {{ Form::close() }}
 

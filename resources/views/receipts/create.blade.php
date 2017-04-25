@@ -63,7 +63,7 @@
                                             <option>Credit card</option>
                                         </select>
                                     </div>
-                                    <button class="btn btn-primary form-btn pull-right" type="submit">Add Receipt
+                                    <button class="btn btn-success form-btn pull-right" type="submit">Add Receipt
                                     </button>
                                 </div>
                             </div>
