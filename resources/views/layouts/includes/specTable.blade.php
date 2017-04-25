@@ -1,0 +1,44 @@
+<table class="table table-condensed table-bordered fit">
+    <tbody>
+    <tr>
+        <td><b>CPU</td>
+        <td>{{$item->specs->cpu}}</td>
+        <td><b>LAN</td>
+        <td>{{$item->specs->lan}}</td>
+    </tr>
+    <tr>
+        <td><b>RAM</td>
+        <td>{{$item->specs->ram}}</td>
+        <td><b>WLAN</td>
+        <td>{{$item->specs->wlan}}</td>
+    </tr>
+    <tr>
+        <td><b>HDD</td>
+        <td>{{$item->specs->hdd}}</td>
+        <td><b>OS</td>
+        <td>{{$item->specs->os}}</td>
+    </tr>
+    <tr>
+        <td><b>ODD</td>
+        <td>{{$item->specs->odd}}</td>
+        <td><b>PSU</td>
+        <td>{{$item->specs->psu}}</td>
+    </tr>
+    <tr>
+        <td><b>GPU</td>
+        <td>{{$item->specs->gpu}}</td>
+        <td><b>Screen Size</td>
+        <td>{{$item->specs->screen_size}}</td>
+    </tr>
+    <tr>
+        <td><b>Battery</td>
+        <td>{{$item->specs->battery}}</td>
+        <td><b>Screen Resolution</td>
+        <td>{{$item->specs->screen_rez}}</td>
+    </tr>
+    <tr>
+        <td><b>USB</td>
+        <td>{{$item->specs->usb}}</td>
+    </tr>
+    </tbody>
+</table>
