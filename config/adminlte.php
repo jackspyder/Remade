@@ -122,7 +122,7 @@ return [
         [
             'text' => 'Items',
             'url'  => 'items',
-            'icon' => 'lock',
+            'icon' => 'table',
         ],
         [
             'text' => 'Receipts',

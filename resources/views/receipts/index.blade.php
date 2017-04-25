@@ -79,8 +79,9 @@
                     </div>
                     <div class="box-body" hidden>
 
-                        <div class="table-responsive">
-                            <table class="table table-hover">
+                        <div>
+                            <table id="deletedReceiptsList" class="table table-striped table-bordered table-hover"
+                                   cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
