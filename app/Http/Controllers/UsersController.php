@@ -42,12 +42,14 @@ class UsersController extends Controller
     {
         $this->validate(request(), [
             'name'     => 'required|max:20',
+            'email'    => 'required|email|unique:users',
             'username' => 'required|max:20|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
 
         $user = new User;
         $user->name = request('name');
+        $user->email = request('email');
         $user->username = request('username');
         $user->password = bcrypt(request('password'));
         $user->save();
