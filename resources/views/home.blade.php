@@ -1,3 +1,9 @@
+<input type="hidden" id="forsale" value="{{$counts['forsale']}}"/>
+<input type="hidden" id="forparts" value="{{$counts['forparts']}}"/>
+<input type="hidden" id="storage" value="{{$counts['storage']}}"/>
+<input type="hidden" id="sold" value="{{$counts['sold']}}"/>
+<input type="hidden" id="refurbishment" value="{{$counts['refurbishment']}}"/>
+
 @extends('adminlte::page')
 
 @section('title', 'Home')
@@ -24,6 +30,7 @@
                     </div>
                     <div class="box-body">
 
+                        <canvas id="mycanvas"></canvas>
 
                         this is all the text in the body of the box for you to
                         read and see how it goes all here in this nice box space, hopefully it matches
