@@ -31,8 +31,9 @@
                                 <ul class="list">
                                     <li><b>Receipt ID: </b>{{$receipt->id}}</li>
                                     <li><b>Item List: </b>
-                                        <div class="table-responsive">
-                                            <table class="table table-hover">
+                                        <div>
+                                            <table class="table table-striped table-bordered table-hover"
+                                                   cellspacing="0" width="100%">
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>

@@ -25,8 +25,9 @@
                     <div class="box-body">
 
 
-                        <div class="table-responsive">
-                            <table class="table table-hover">
+                        <div>
+                            <table id="itemList" class="table table-striped table-bordered table-hover" cellspacing="0"
+                                   width="100%">
                                 <thead>
                                 <tr>
                                     <th>Barcode</th>
