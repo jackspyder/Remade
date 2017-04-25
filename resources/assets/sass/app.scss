@@ -4,3 +4,16 @@
 @import "variables";
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: #DDD;
+}
+
+#mycanvas {
+  max-width: 300px;
+  max-height: 300px;
+}
