@@ -1,62 +1,66 @@
-@extends('layouts.app)
+@extends('adminlte::page')
+
+@section('title', 'Customers')
+
+@section('content_header')
+    <h1>Add a Customer</h1>
+@stop
 
 @section('content')
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    <div class="panel panel-default">
-        <div class="panel-heading tall-header">Customer
-            <button type="button" class="btn btn-default pull-right" data-toggle="collapse" data-target="#addPanel">
-                <span id="addCaret" class="fa fa-caret-down" aria-hidden="true"></span>
-            </button>
-        </div>
-        <div id="addPanel" class="panel-body in">
-            <form role="form" method="POST" action="{{ url('/customers') }}">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="form-group col-sm-12 col-md-6">
-                            <label for="category" class="control-label">ID</label>
-                            <input name="category" class="form-control">
+    <div class="container-fluid spark-screen">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
 
-                            </input>
+                {{--Start of a box--}}
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Create Customer</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
 
-                            <label for="spec_id" class="control-label">Forename</label>
-                            <input name="spec_id" class="form-control">
+                        <h1>Create new Customer</h1>
 
-                            </input>
 
-                            <label for="condition" class="control-label">Surname</label>
-                            <input name="condition" class="form-control">
+                        {{ Form::open(['url' => '/customers', 'method' => 'POST']) }}
 
-                            </input>
+                        <div class="form-group">
+                            {{ Form::label('first_name', 'First Name') }}
+                            {{ Form::text('first_name', null, array('class' => 'form-control')) }}
                         </div>
 
-                        <div class="form-group col-sm-12 col-md-6">
-
-                            <label for="weight" class="control-label">Email</label>
-                            <input name="weight" class="form-control">
-
-                            </input>
-
-                            <label for="weight" class="control-label">Phone no.</label>
-                            <input name="weight" class="form-control">
-
-                            </input>
+                        <div class="form-group">
+                            {{ Form::label('last_name', 'Last Name') }}
+                            {{ Form::text('last_name', null, array('class' => 'form-control')) }}
                         </div>
 
-                        <button class="btn btn-primary form-btn pull-right" type="submit">Add Customer</button>
+                        <div class="form-group">
+                            {{ Form::label('email', 'Email') }}
+                            {{ Form::email('email', null, array('class' => 'form-control')) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ Form::label('phone_no', 'Phone Number') }}
+                            {{ Form::text('phone_no', null, array('class' => 'form-control')) }}
+                        </div>
+
+
+                        {{ Form::submit('Add Customer', array('class' => 'btn btn-success pull-right')) }}
+
+                        {{ Form::close() }}
+
 
                     </div>
+                    {{--end of box-body--}}
                 </div>
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            </form>
+                {{--end of box--}}
+            </div>
         </div>
     </div>
-@endsection
+
+@stop

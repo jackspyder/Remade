@@ -29,7 +29,7 @@
                                 <img class="img-circle" width="150" height="150"
                                      src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg"/>
                             </div>
-                            <div class="" col-md-4>
+                            <div class="col-md-4">
                                 <ul class="list">
                                     <li><b>User ID: </b>{{ $user->id }}</li>
                                     <li><b>Name: </b> {{ $user->name }}</li>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Customer;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CustomersController extends Controller
 {
@@ -39,13 +40,13 @@ class CustomersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         $this->validate(request(), [
             'first_name' => 'nullable',
             'last_name'  => 'nullable',
-            'email'      => 'unique:customers|required|email',
-            'phone_no'   => 'unique'
+            'email'      => 'unique:customers,email|required|email',
+            'phone_no'   => 'unique:customers,phone_no'
         ]);
 
         $customer = new Customer;
@@ -106,11 +107,11 @@ class CustomersController extends Controller
             'last_name'  => 'nullable',
             'email'      => [
                 'required',
-                Rule::unique('customers')->ignore($customer->email),
+                Rule::unique('customers')->ignore($customer->id),
             ],
             'phone_no'   => [
                 'required',
-                Rule::unique('customers')->ignore($customer->phone_no),
+                Rule::unique('customers')->ignore($customer->id),
             ]
         ]);
 

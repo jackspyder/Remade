@@ -49,5 +49,5 @@ Route::group([ 'middleware' => [ 'web', 'auth' ] ], function () {
 ////////////////Customers//////////////
 Route::group([ 'middleware' => [ 'web', 'auth' ] ], function () {
     Route::resource('customers', 'CustomersController');
-    Route::put('/receipts/{receipt}/restore', 'ReceiptsController@restore');
+    Route::put('/receipts/{receipt}/restore', 'CustomersController@restore');
 });

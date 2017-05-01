@@ -1,89 +1,82 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Customers')
+
+@section('content_header')
+    <h1>Customer List</h1>
+@stop
 
 @section('content')
 
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <div class="container-fluid spark-screen">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
 
-    <div class="panel panel-default">
-        <div class="panel-heading tall-header">Customer
-            <button type="button" class="btn btn-default pull-right" data-toggle="collapse" data-target="#addPanel">
-                <span id="addCaret" class="fa fa-caret-down" aria-hidden="true"></span>
-            </button>
-        </div>
-        <div id="addPanel" class="panel-body in">
-            <form role="form" method="POST" action="{{ url('/customers') }}">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="form-group col-sm-12 col-md-6">
-                            <label for="category" class="control-label">ID</label>
-                            <input name="category" class="form-control">
-
-                            </input>
-
-                            <label for="spec_id" class="control-label">Forename</label>
-                            <input name="spec_id" class="form-control">
-
-                            </input>
-
-                            <label for="condition" class="control-label">Surname</label>
-                            <input name="condition" class="form-control">
-
-                            </input>
+                {{--Start of box--}}
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Customer List</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
                         </div>
+                    </div>
+                    <div class="box-body">
 
-                        <div class="form-group col-sm-12 col-md-6">
 
-                            <label for="weight" class="control-label">Email</label>
-                            <input name="weight" class="form-control">
+                        @foreach($customers as $customer)
+                            @if($customer->deleted_at == null)
+                                <div>
+                                    <ul class="list-group">
+                                        <a href="/customers/{{ $customer->id }}" class="list-group-item">
+                                            <h4 class="list-group-item-heading">
+                                                {{ $customer->first_name }} {{ $customer->last_name }}</h4>
+                                        </a>
+                                    </ul>
+                                </div>
+                            @endif
+                        @endforeach
 
-                            </input>
+                        <a href="{{ url('/customers/create') }}" class="btn btn-primary pull-right">Add Customer</a>
+                    </div>
+                    {{--/box-body--}}
+                </div>
+                {{--/box--}}
 
-                            <label for="weight" class="control-label">Phone no.</label>
-                            <input name="weight" class="form-control">
 
-                            </input>
+                {{--Start of box--}}
+                <div class="box box-solid box-default collapsed-box">
+                    <div class="box-header">
+                        <h3 class="box-title">Deleted Customer list</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-plus"></i>
+                            </button>
                         </div>
+                    </div>
+                    <div class="box-body" hidden>
 
-                        <button class="btn btn-primary form-btn pull-right" type="submit">Add Customer</button>
+                        @foreach($customers as $customer)
+                            @if($customer->deleted_at != null)
+                                <div>
+                                    <ul class="list-group">
+                                        <a href="/customers/{{ $customer->id }}" class="list-group-item">
+                                            <h4 class="list-group-item-heading">
+                                                {{ $customer->first_name }} {{ $customer->last_name }}</h4>
+                                        </a>
+                                    </ul>
+                                </div>
+                            @endif
+                        @endforeach
 
                     </div>
+                    {{--/box-body--}}
                 </div>
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            </form>
-        </div>
-    </div>
+                {{--/box--}}
 
-    <div class="panel panel-default">
-        <div class="panel-heading tall-header">Customers
-            <button type="button" class="btn btn-default pull-right" data-toggle="collapse" data-target="#custPanel">
-                <span id="custCaret" class="fa fa-caret-down" aria-hidden="true"></span>
-            </button>
-            <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#searchModal">
-                <span class="fa fa-search" aria-hidden="true"></span>
-            </button>
-        </div>
-        <div id="custPanel" class="panel-body in">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Forename</th>
-                        <th>Surname</th>
-                        <th>Email</th>
-                        <th>Phone No.</th>
-                    </tr>
-                </table>
             </div>
         </div>
     </div>
 
-@endsection
+@stop
