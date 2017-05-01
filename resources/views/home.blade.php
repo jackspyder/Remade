@@ -29,14 +29,9 @@
                         </div>
                     </div>
                     <div class="box-body">
-
-                        <canvas id="mycanvas"></canvas>
-
-                        this is all the text in the body of the box for you to
-                        read and see how it goes all here in this nice box space, hopefully it matches
-                        well with existing shit from the last project.
-
-
+                        <div class="canvas">
+                        <canvas class="mycanvas" id="mycanvas" width="300" height="300"></canvas>
+                        </div>
                     </div>
                     {{--end of box-body--}}
                 </div>
