@@ -41,8 +41,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js'></script>
+<script src="/js/app.js"></script>
 <script src="/js/charts.js"></script>
-<script src="/js/autocomplete.js"></script>
+{{--<script src="/js/autocomplete.js"></script>--}}
 {{--<script src="public/js/mixed.js"></script>--}}
 
 @if(config('adminlte.plugins.datatables'))

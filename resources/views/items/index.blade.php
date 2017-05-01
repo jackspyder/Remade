@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+    @include('layouts.includes.searchModal')
 
     <div class="container-fluid spark-screen">
         <div class="row">
@@ -17,9 +18,14 @@
                     <div class="box-header">
                         <h3 class="box-title">Item List</h3>
                         <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-default pull-right" data-toggle="modal"
+                                    data-target="#searchModal">
+                                <span class="fa fa-search" aria-hidden="true"></span>
+                            </button>
                             <button class="btn btn-box-tool" data-widget="collapse">
                                 <i class="fa fa-minus"></i>
                             </button>
+
                         </div>
                     </div>
                     <div class="box-body">

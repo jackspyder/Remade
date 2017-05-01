@@ -8309,35 +8309,11 @@ button.close {
   background-color: #DDD;
 }
 
-canvas {
-  max-width: 300px;
-  max-height: 300px;
-}
-
-mycanvas{
-  max-width: 300px;
-  max-height: 300px;
-}
-
 #mycanvas {
   max-width: 300px;
   max-height: 300px;
 }
 
-.mycanvas {
-  max-width: 300px;
-  max-height: 300px;
-}
-
-#canvas {
-  max-width: 300px;
-  max-height: 300px;
-}
-
-.canvas {
-  max-width: 300px;
-  max-height: 300px;
-}
 
 
 
