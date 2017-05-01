@@ -70,7 +70,7 @@ class ItemsController extends Controller
             'wlan'        => 'max:40',
             'os'          => 'max:40',
             'psu'         => 'max:40',
-            'screen_size' => 'max:40',
+            'screen_size' => 'max:40|numeric|nullable',
             'screen rez'  => 'max:40',
         ]);
 
@@ -156,7 +156,7 @@ class ItemsController extends Controller
             'wlan'        => 'max:40',
             'os'          => 'max:40',
             'psu'         => 'max:40',
-            'screen_size' => 'max:40',
+            'screen_size' => 'max:40|numeric|nullable',
             'screen rez'  => 'max:40',
         ]);
 
