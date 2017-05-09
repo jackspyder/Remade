@@ -36,7 +36,7 @@
                     </div>
                     <div class="box-body">
 
-                        {{ Form::model($item, array('route' => array('items.update', $item->id), 'method' => 'PATCH')) }}
+                        {{ Form::model($item, array('route' => array('items.update', $item->id), 'method' => 'PATCH', 'files' => true)) }}
 
                         <div class="container-fluid">
                             <div class="row">
@@ -138,6 +138,11 @@
                                 <div class="form-group col-sm-12">
                                     {{ Form::label('notes', 'Notes') }}
                                     {{ Form::textarea('notes', null, array('class' => 'form-control')) }}
+                                </div>
+
+                                <div class="form-group col-sm-12">
+                                    {{ Form::label('images', 'Upload Images') }}
+                                    {{ Form::file('images[]', ['multiple' => 'multiple']) }}
                                 </div>
 
                             </div>
