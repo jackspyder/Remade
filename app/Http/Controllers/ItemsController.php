@@ -87,10 +87,11 @@ class ItemsController extends Controller
         $item->dimensions()->save($dim);
 
         //save images to a folder named as the item barcode
-        foreach ($request->images as $image) {
-            $image->store('photos/'.$item->barcode);
+        if ($request->images != null) {
+            foreach ($request->images as $image) {
+                $image->store('photos/'.$item->barcode);
+            }
         }
-
         return redirect('/items');
     }
 
@@ -174,8 +175,10 @@ class ItemsController extends Controller
 
         $item->dimensions->update($request->only('height', 'width', 'depth'));
 
-        foreach ($request->images as $image) {
-            $image->store('photos/'.$item->barcode);
+        if ($request->images != null) {
+            foreach ($request->images as $image) {
+                $image->store('photos/'.$item->barcode);
+            }
         }
 
         return redirect('/items');
