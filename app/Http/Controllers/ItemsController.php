@@ -7,6 +7,7 @@ use App\Models\Item;
 use App\Models\Spec;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class ItemsController extends Controller
@@ -90,8 +91,6 @@ class ItemsController extends Controller
             $image->store('photos/'.$item->barcode);
         }
 
-
-
         return redirect('/items');
     }
 
@@ -107,7 +106,9 @@ class ItemsController extends Controller
     {
         $item = Item::withTrashed()->findOrFail($id);
 
-        return view('items.show', compact('item'));
+        $files = Storage::allFiles('photos/'.$id);
+
+        return view('items.show', compact('item', 'files'));
     }
 
 
@@ -121,8 +122,6 @@ class ItemsController extends Controller
     public function edit($id)
     {
         $item = Item::withTrashed()->findOrFail($id);
-
-        //$spec = Spec::all();
 
         return view('items.edit', compact('item'));
     }
@@ -239,9 +238,6 @@ class ItemsController extends Controller
         $items2 = [];
         foreach ($gotspecs as $spec) {
             $items2[] = $spec['item_id'];
-            //foreach ($spec->item_id as $itemgot) {
-            //    $items[] = $itemgot;
-            //}
         }
 
         $items = Item::find($items2);
