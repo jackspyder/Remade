@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "3e64bebabcdcf42dcec1e18c1f0abf60",
@@ -290,20 +290,20 @@
         },
         {
             "name": "jeroennoten/laravel-adminlte",
-            "version": "v1.23.1",
+            "version": "v1.25.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-                "reference": "ff13c6d0c750d2d5667db01e617d8b21bcaab5b8"
+                "reference": "4a6de826c488cfff01d673ed87aa35f7af402374"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/ff13c6d0c750d2d5667db01e617d8b21bcaab5b8",
-                "reference": "ff13c6d0c750d2d5667db01e617d8b21bcaab5b8",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/4a6de826c488cfff01d673ed87aa35f7af402374",
+                "reference": "4a6de826c488cfff01d673ed87aa35f7af402374",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.1.12|~5.2.0|~5.3.0|~5.4.0|~5.5.0|~5.6.0",
+                "laravel/framework": "~5.1.12|~5.2.0|~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -339,7 +339,7 @@
                 "administrator",
                 "laravel"
             ],
-            "time": "2018-02-07T22:22:38+00:00"
+            "time": "2019-03-10T09:17:09+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3034,6 +3034,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2017-06-30T09:13:00+00:00"
         },
         {
